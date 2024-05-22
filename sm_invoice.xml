@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_invoice_tree" model="ir.ui.view">
+        <field name="name">sm.invoice.tree</field>
+        <field name="model">sm.invoice</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice">
+                <field name="invoice_number"/>
+                <field name="date"/>
+                <field name="invoice_template"/>
+            </tree>
+            <!-- <search>
+                <filter string="Is Paid" name="filter_paid" domain="[('is_paid', '=', True)]"/>
+            </search> -->
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_school_invoice_form">
+        <field name="name">school.invoice.form</field>
+        <field name="model">sm.invoice</field>
+        <field name="arch" type="xml">
+            <form string="Invoice">
+            <header>
+                <button name="action_send_invoice_email" string="Send Invoice" type="object" class="btn-primary"/>
+            </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <group>
+                                <field name="invoice_number"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="invoice_template"/>
+                        </group>
+                        <field name="invoice_items">
+                            <tree string="Invoice Items">
+                                <field name="name"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                        <field name="student_id">
+                            <tree string="Students">
+                                <field name="name"/>
+                                <field name="last_name"/>
+                                <field name="contact_email"/>
+                            </tree>
+                        </field>
+                        <group>
+                            <group>
+                                <field name="amount"/>
+                            </group>
+                            <group>
+                                <field name="due_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="is_paid"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- <record model="ir.ui.view" id="view_school_invoice_form">
+        <field name="name">school.invoice.form</field>
+        <field name="model">sm.invoice</field>
+        <field name="arch" type="xml">
+            <form string="Invoice">
+            <header>
+                <button name="action_send_invoice_email" string="Send Invoice" type="object" class="btn-primary"/>
+            </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <group>
+                                <field name="invoice_number"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="invoice_template"/>
+                        </group>
+                        <field name="invoice_items">
+                            <tree string="Invoice Items">
+                                <field name="name"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                        <field name="student_id">
+                            <tree string="Students" editable="bottom">
+                                <field name="name"/>
+                                <field name="last_name"/>
+                                <field name="contact_email"/>
+                                
+                            </tree>
+                        </field>
+                        <group>
+                            <group>
+                                <field name="amount"/>
+                            </group>
+                            <group>
+                                <field name="due_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="is_paid"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record> -->
+
+    <record model="ir.ui.view" id="view_school_invoice_search">
+        <field name="name">school.invoice.search</field>
+        <field name="model">sm.invoice</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="invoice_number"/>
+                <field name="student_id"/>
+                <field name="date"/>
+                <!-- <field name="is_paid"/> -->
+            </search>
+        </field>
+    </record>
+
+    <!-- <record id="action_school_invoice" model="ir.actions.act_window">
+        <field name="name">School Invoices</field>
+        <field name="res_model">sm.invoice</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_school_invoice_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create invoice here.
+            </p>
+        </field>
+    </record> -->
+
+    <!-- <menuitem id="menu_sm_invoice_menu" name="Invoice" parent="menu_school_management" sequence="5"/>
+    <menuitem id="menu_sm_invoice" name="Invoice" parent="menu_sm_invoice_menu" action="action_school_invoice" sequence="1"/> -->
+
+
+</odoo>
