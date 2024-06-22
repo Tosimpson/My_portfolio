@@ -16,7 +16,7 @@
                 <!-- <img src="images/logo4.png" class="logo" alt="Photo by Arno Senoner on Unsplash"> -->
                 <a href="#" class="logo"><span>A</span>rawole.</a>
                 <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
@@ -71,8 +71,10 @@
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2016 - 2022</span><br>B.ENG Computer Engineering at Federal University Oye Ekiti.</li>
-                            <li><span>2016 - 2022</span><br>Secondary School Certificate at Christ the Redeemer Secondary School.</li>
+                            <li><span>2016 - 2022</span><br>B.ENG Computer Engineering at Federal University Oye Ekiti.
+                            </li>
+                            <li><span>2016 - 2022</span><br>Secondary School Certificate at Christ the Redeemer
+                                Secondary School.</li>
                         </ul>
                     </div>
                 </div>
@@ -84,30 +86,28 @@
         <div class="container">
             <h1 class="sub-title">My Services</h1>
             <div class="services-list">
-                <div>
+                <div class="sl-1">
                     <i class="fa-solid fa-code"></i>
                     <h2>Web Design</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates corporis consequuntur
-                        asperiores similique esse velit sequi laboriosam molestiae? Sed nulla itaque sapiente dolorum
-                        id.
+                    <p>In today's digital age, your website is often the first interaction potential clients have with
+                        your brand. As a front-end developer, I specialize in creating visually appealing and highly
+                        functional websites that provide an exceptional user experience.
                     </p>
-                    <a href="#">Learn more</a>
+                    <a href="/pages/webDesign.html">Learn more</a>
                 </div>
-                <div>
+                <div class="sl-2">
                     <i class="fa-solid fa-crop"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates corporis consequuntur
-                        asperiores similique esse velit sequi laboriosam molestiae? Sed nulla itaque sapiente dolorum
-                        id.
+                    <h2>Website Redesign and Optimization</h2>
+                    <p>Help clients update and optimize their existing websites to improve aesthetics, usability,
+                        performance, and SEO rankings.
                     </p>
                     <a href="#">Learn more</a>
                 </div>
-                <div>
+                <div class="sl-3">
                     <i class="fa-brands fa-app-store"></i>
-                    <h2>App Design</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates corporis consequuntur
-                        asperiores similique esse velit sequi laboriosam molestiae? Sed nulla itaque sapiente dolorum
-                        id.
+                    <h2>Web Hosting and Domain Management</h2>
+                    <p>Offer web hosting and domain management services, providing clients with reliable hosting
+                        solutions and managing their domain registrations and renewals.
                     </p>
                     <a href="#">Learn more</a>
                 </div>
@@ -123,7 +123,7 @@
                     <img src="images/goran-ivos-iacpoKgpBAM-unsplash.jpg" alt="">
                     <div class="layer">
                         <h3>Social Media App</h3>
-                        <p>The app connects your to the talented people around the world. 
+                        <p>The app connects your to the talented people around the world.
                             Download it from play store
                         </p>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -133,7 +133,7 @@
                     <img src="images/yizheng-duanmu-tXFbYqCimhI-unsplash.jpg" alt="">
                     <div class="layer">
                         <h3>Music App</h3>
-                        <p>The app connects your to the talented people around the world. 
+                        <p>The app connects your to the talented people around the world.
                             Download it from play store
                         </p>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -143,7 +143,7 @@
                     <img src="images/altumcode-dMUt0X3f59Q-unsplash.jpg" alt="">
                     <div class="layer">
                         <h3>Online Shopping App</h3>
-                        <p>The app connects your to the talented people around the world. 
+                        <p>The app connects your to the talented people around the world.
                             Download it from play store
                         </p>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -181,7 +181,7 @@
             </div>
         </div>
         <div class="copyright">
-             <p>Copyright © Tobi. 2024</p>
+            <p>Copyright © Tobi. 2024</p>
         </div>
     </div>
 
@@ -207,10 +207,10 @@
 
         var sidemenu = document.getElementById("sidemenu");
 
-        function openmenu(){
+        function openmenu() {
             sidemenu.style.right = "0";
         }
-        function closemenu(){
+        function closemenu() {
             sidemenu.style.right = "-200px";
         }
     </script>
@@ -218,18 +218,18 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyONfVUsFL4jHnmOBZsL-VJbqhy4EyCcGlEY_e_JM-0sW0GLn8D-JMTxCT3uMoXKWKsyg/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
-        
+
         form.addEventListener('submit', e => {
             e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
         })
     </script>
 

@@ -14,6 +14,17 @@ html {
     scroll-behavior: smooth;
 }
 
+@keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
 body {
     background-color: #080808;
     color: white;
@@ -91,6 +102,27 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+.header-text p {
+    animation: slideUp 1s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.header-text h1 {
+    animation: slideUp 1s ease-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.header-text h1 span {
+    animation: slideUp 1s ease-out;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 .header-text {
